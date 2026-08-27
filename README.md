@@ -5,7 +5,7 @@ Achieves a Pearson correlation of 0.569 in a cold drug environment.
 
 See 'Scripts' branch for code. \
 See 'Raw data sets' branch for raw data used to get model features and run the model. \
-See 'Processed data sets' for data sets used to run the model. \
+See 'Processed data sets' for data sets used to run the model.
 
 Cell features: Gene expression, gene mutation, cell methylation, cell copy number and cell CRISPR importance. \
 Drug features: Morgan fingerprints, ChemBERTa embeddings, molecular graph embeddings and drug-target interaction estimated via 'DeepPurpose'. \
