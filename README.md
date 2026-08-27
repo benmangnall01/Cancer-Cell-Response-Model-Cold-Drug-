@@ -1,7 +1,7 @@
 # Cancer-Cell-Response-Model-Cold-Drug-
 Code and required data sets to run cancer-cell response model. 
 
-Achieves a Pearson correlation of 0.569 in a cold drug environment. 
+Achieves a mean Pearson correlation of 0.569 in a cold drug environment across a 5-fold cv. 
 
 See 'Scripts' branch for code. \
 See 'Raw data sets' branch for raw data used to get model features and run the model. \
