@@ -1,5 +1,5 @@
 # Cancer-Cell-Response-Model-Cold-Drug-
-Code and required data sets to run cancer-cell response model. 
+Code and required data sets to run cancer-cell response model. \
 Uses multi-omics of cancer cell lines obtained from Depmap.org and the GDSC and drug's molecular features to predict sensitivity (lnIC50). \
 Achieves a mean Pearson correlation of 0.569 in a cold drug environment across a 5-fold cv. 
 
