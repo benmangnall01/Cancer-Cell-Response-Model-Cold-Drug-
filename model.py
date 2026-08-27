@@ -410,14 +410,6 @@ class CDR_model:
  
         train_ds = data_process_loader(list_IDs=np.arange(len(train_drug)), labels=train_drug["lnIC50"].values, drug_df=train_drug.reset_index(drop=True), cached_drug_features=cached_drug_features)
 
-        missing = set(
-            train_drug["smiles"].astype(str)
-        ) - set(cached_drug_features["smiles_to_idx"].keys())
-
-        if missing:
-            print(f"WARNING: {len(missing)} training SMILES missing from cache")
-            print(list(missing)[:20])
-
         set(cached_drug_features["smiles_to_idx"].keys())
 
         training_generator = data.DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, drop_last=False, pin_memory=(device.type == "cuda"))
