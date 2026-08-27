@@ -14,7 +14,6 @@ PROCESSED_DIR = PROJECT_ROOT / "processed"
 
 # Choose to use CRISPR data as a feature, or prism data for the training data set
 use_crispr = True
-use_prism = False
 
 # ------------------------
 # Load GDSC
