@@ -337,7 +337,7 @@ class Classifier(nn.Sequential):
 # Trainer / Wrapper
 # -----------------------------
 
-class TransCDR:
+class CDR_model:
     def __init__(self, **_ignored_config):
         # ignore passed config on purpose
         self.config = dict(DEFAULTS)
