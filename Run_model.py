@@ -75,5 +75,5 @@ for i in range(1, n_splits + 1):
     test  = pd.read_csv(OUT_DIR / f"test{i}.csv")
 
     # Run model 
-    net = TransCDR()               
+    net = CDR_model()               
     net.train(train_drug=train, test_drug=test, val_drug=val)
