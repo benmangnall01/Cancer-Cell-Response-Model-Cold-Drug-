@@ -63,6 +63,8 @@ Train a new model for each fold. \
 Select the best model using validation MSE. \
 Evaluate the model on the held-out drugs. 
 
+**Results**
+
 Achieves a mean Pearson correlation of 0.569 in a cold-drug scenario across a 5-fold CV. 
 
 
