@@ -16,8 +16,8 @@ This project combines these two sources of information into a single multimodal 
 
 Each drug is represented using three complementary molecular representations:
 
-Morgan fingerprint — a 1,024-bit circular molecular fingerprint generated from the SMILES structure.
-ChemBERTa embedding — a pretrained transformer embedding generated directly from the drug SMILES.
+Morgan fingerprint — a 1,024-bit circular molecular fingerprint generated from the SMILES structure. \
+ChemBERTa embedding — a pretrained transformer embedding generated directly from the drug SMILES. \
 Molecular graph embedding — a pretrained graph neural network representation generated using DGL-LifeSci.
 
 
@@ -25,10 +25,10 @@ Molecular graph embedding — a pretrained graph neural network representation g
 
 Each cancer cell line is represented using five molecular profiles:
 
-Gene expression
-Somatic mutations
-DNA methylation
-Copy number
+Gene expression \
+Somatic mutations \
+DNA methylation \
+Copy number \
 CRISPR gene-dependency data
 
 Each modality is independently projected into a shared 256-dimensional representation.
@@ -49,7 +49,7 @@ This generates and caches the three molecular representations:
 
 drug_fingerprints.npz \
 drug_chemberta_embeddings.npz \
-drug_molecular_graphs.npz \
+drug_molecular_graphs.npz
 
 **3. Run cross-validation**
 
@@ -57,12 +57,11 @@ Run_model.py
 
 This will:
 
-Create five drug-level cross-validation folds.
-Create training, validation and test datasets for each fold.
-Train a new model for each fold.
-Select the best model using validation MSE.
-Evaluate the model on the held-out drugs.
-
+Create five drug-level cross-validation folds. \
+Create training, validation and test datasets for each fold. \
+Train a new model for each fold. \
+Select the best model using validation MSE. \
+Evaluate the model on the held-out drugs. 
 
 
 Uses the machine learning architecture inspired by: Xia, X., Zhu, C., Zhong, F. et al. TransCDR: a deep learning model for enhancing the generalizability of drug activity prediction through transfer learning and multimodal data fusion. BMC Biol 22, 227 (2024). https://doi.org/10.1186/s12915-024-02023-8
