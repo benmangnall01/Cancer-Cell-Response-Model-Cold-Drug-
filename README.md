@@ -16,8 +16,8 @@ This project combines these two sources of information into a single multimodal 
 
 Each drug is represented using three complementary molecular representations:
 
-Morgan fingerprint — a 1,024-bit circular molecular fingerprint generated from the SMILES structure. \
-ChemBERTa embedding — a pretrained transformer embedding generated directly from the drug SMILES. \
+Morgan fingerprint — a 1,024-bit circular molecular fingerprint generated from the SMILES structure.\
+ChemBERTa embedding — a pretrained transformer embedding generated directly from the drug SMILES.\
 Molecular graph embedding — a pretrained graph neural network representation generated using DGL-LifeSci.
 
 
@@ -25,10 +25,10 @@ Molecular graph embedding — a pretrained graph neural network representation g
 
 Each cancer cell line is represented using five molecular profiles:
 
-Gene expression \
-Somatic mutations \
-DNA methylation \
-Copy number \
+Gene expression. \
+Somatic mutations. \
+DNA methylation. \
+Copy number. \
 CRISPR gene-dependency data
 
 Each modality is independently projected into a shared 256-dimensional representation.
