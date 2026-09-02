@@ -24,7 +24,7 @@ gdsc = gdsc[['COSMIC_ID', 'CELL_LINE_NAME', 'DRUG_NAME', 'LN_IC50']]
 gdsc.columns = ['COSMIC_ID', 'cell_type', 'drug_name', 'lnIC50']
 
 # ------------------------
-# Load their data set
+# Load the data set used in the TransCDR paper
 # ------------------------
 
 transcdr = pd.read_csv(RAW_DIR / 'CDR_n156813.txt',sep='\t',index_col=0)
