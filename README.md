@@ -63,5 +63,7 @@ Train a new model for each fold. \
 Select the best model using validation MSE. \
 Evaluate the model on the held-out drugs. 
 
+Achieves a mean Pearson correlation of 0.569 in a cold-drug scenario across a 5-fold CV. 
+
 
 Uses the machine learning architecture inspired by: Xia, X., Zhu, C., Zhong, F. et al. TransCDR: a deep learning model for enhancing the generalizability of drug activity prediction through transfer learning and multimodal data fusion. BMC Biol 22, 227 (2024). https://doi.org/10.1186/s12915-024-02023-8
