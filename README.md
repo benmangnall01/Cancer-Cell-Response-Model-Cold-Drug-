@@ -37,29 +37,23 @@ Each modality is independently projected into a shared 256-dimensional represent
 
 **1. Prepare the cell-line data**
 
-Run:
-
-python Cell_features.py
+Cell_features.py
 
 This produces the processed cell-line and drug-response datasets required by the model.
 
 **2. Generate drug features**
 
-Run:
-
-python Drug_features.py
+Drug_features.py
 
 This generates and caches the three molecular representations:
 
-drug_fingerprints.npz
-drug_chemberta_embeddings.npz
-drug_molecular_graphs.npz
+drug_fingerprints.npz \
+drug_chemberta_embeddings.npz \
+drug_molecular_graphs.npz \
 
 **3. Run cross-validation**
 
-Run:
-
-python Run_model.py
+Run_model.py
 
 This will:
 
