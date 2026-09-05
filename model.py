@@ -29,7 +29,6 @@ _expr = pd.read_csv(PROCESSED_DIR / "expression.csv", index_col=0)
 _mut  = pd.read_csv(PROCESSED_DIR / "mutations.csv", index_col=0)
 _meth = pd.read_csv(PROCESSED_DIR / "methylation.csv", index_col=0)
 _cn   = pd.read_csv(PROCESSED_DIR / "copy_number.csv", index_col=0)
-
 if use_crispr:
     _crispr = pd.read_csv(PROCESSED_DIR / "crispr.csv", index_col=0)
 
@@ -39,7 +38,6 @@ with np.load(PROCESSED_DIR / "drug_chemberta_embeddings.npz", allow_pickle=True)
     seq_input_dim = f[f.files[0]].shape[1]
 with np.load(PROCESSED_DIR / "drug_molecular_graphs.npz", allow_pickle=True) as f:
     graph_input_dim = f[f.files[0]].shape[1]
-
 if use_dti:
     with np.load(PROCESSED_DIR / "drug_dti.npz", allow_pickle=True) as f:
         dti_input_dim = f[f.files[0]].shape[1]
