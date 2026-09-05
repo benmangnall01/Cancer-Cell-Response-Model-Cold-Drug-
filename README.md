@@ -65,7 +65,12 @@ Evaluate the model on the held-out drugs.
 
 **Results**
 
-Achieves a mean Pearson correlation of 0.569 in a cold-drug scenario across a 5-fold CV. 
+Achieves a mean Pearson correlation of 0.569 in a cold-drug scenario across a 5-fold CV.
+
+**Data**
+
+Raw data required to generate the processed data can be found in the 'Raw data' branch. \
+Processed data to run the model can be found in the 'Processed data' branch.
 
 **Acknowledgements**
 
