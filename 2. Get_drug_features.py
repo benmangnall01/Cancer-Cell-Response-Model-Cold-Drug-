@@ -96,10 +96,10 @@ with torch.no_grad():
     enc = {k: v.to(device) for k, v in enc.items()}
 
     out = model(**enc)
-    last = out.last_hidden_state                    # (N, L, H)
-    mask = enc["attention_mask"].unsqueeze(-1)      # (N, L, 1)
+    last = out.last_hidden_state                   
+    mask = enc["attention_mask"].unsqueeze(-1)     
 
-    pooled = (last * mask).sum(dim=1) / mask.sum(dim=1).clamp(min=1)  # (N, H)
+    pooled = (last * mask).sum(dim=1) / mask.sum(dim=1).clamp(min=1) 
     emb = pooled.detach().cpu().numpy().astype(np.float32)
     
 # Make a DataFrame for inspection
@@ -149,8 +149,8 @@ with torch.no_grad():
         nfeats = [g.ndata.pop("atomic_number"), g.ndata.pop("chirality_type")]
         efeats = [g.edata.pop("bond_type"), g.edata.pop("bond_direction_type")]
 
-        node_repr = model_drug(g, nfeats, efeats)          # (num_nodes, D)
-        pooled = readout(g, node_repr)                     # (1, D)
+        node_repr = model_drug(g, nfeats, efeats)          
+        pooled = readout(g, node_repr)                     
         vec = pooled.detach().cpu().numpy().reshape(-1).astype(np.float32)
 
         if graph is None:
@@ -280,9 +280,7 @@ if use_dti:
     # Load the locally available pretrained MPNN-CNN model
     # ------------------------
 
-    mpnn_model = models.model_pretrained(
-        path_dir=r"C:\Users\benma\Cancer\TransCDR_recreate\save_folder\pretrained_models\mpnn_cnn_bindingdb_ic50"
-    )
+    mpnn_model = models.model_pretrained(path_dir=r"C:\Users\benma\Cancer\TransCDR_recreate\save_folder\pretrained_models\mpnn_cnn_bindingdb_ic50")
 
     print("MPNN-CNN BindingDB IC50 model loaded")
 
