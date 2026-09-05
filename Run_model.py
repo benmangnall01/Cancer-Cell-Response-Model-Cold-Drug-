@@ -5,7 +5,7 @@
 import os
 from pathlib import Path
 import pandas as pd
-from model import TransCDR
+from model import CDR_model
 from sklearn.utils import shuffle
 from sklearn.model_selection import KFold, train_test_split
 
