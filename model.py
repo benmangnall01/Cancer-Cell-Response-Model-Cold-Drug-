@@ -1,8 +1,6 @@
 import os
-import json
 import time
 import copy
-import pickle
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -10,22 +8,10 @@ import torch
 from torch import nn
 from torch.utils import data
 import torch.nn.functional as F
-from torch.autograd import Variable
 from sklearn.metrics import mean_squared_error
 from lifelines.utils import concordance_index
 from scipy.stats import pearsonr, spearmanr
-import matplotlib.pyplot as plt
-from tqdm import tqdm
-from prettytable import PrettyTable
 from model_helper import Encoder
-
-from rdkit import Chem, DataStructs, RDLogger
-from rdkit.Chem import rdFingerprintGenerator
-
-from transformers import AutoTokenizer, AutoModel
-from dgllife.model import load_pretrained
-from dgllife.utils import mol_to_bigraph, PretrainAtomFeaturizer, PretrainBondFeaturizer
-from dgl.nn import AvgPooling
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = PROJECT_ROOT / "raw"
