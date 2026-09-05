@@ -69,8 +69,8 @@ Achieves a mean Pearson correlation of 0.569 in a cold-drug scenario across a 5-
 
 **Data**
 
-Raw data required to generate the processed data can be found in the 'Raw data' branch. \
-Processed data to run the model can be found in the 'Processed data' branch.
+Raw data required to generate the processed data can be found in the 'Raw data sets' branch. \
+Processed data to run the model can be found in the 'Processed data sets' branch.
 
 **Acknowledgements**
 
