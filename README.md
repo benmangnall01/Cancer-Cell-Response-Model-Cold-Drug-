@@ -57,11 +57,11 @@ Run_model.py
 
 This will:
 
-Create five drug-level cross-validation folds. \
+Create five drug/cell-level cross-validation folds. \
 Create training, validation and test datasets for each fold. \
 Train a new model for each fold. \
 Select the best model using validation MSE. \
-Evaluate the model on the held-out drugs. 
+Evaluate the model on the held-out drugs or cell lines. 
 
 **Results**
 
