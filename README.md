@@ -75,4 +75,4 @@ Processed data to run the model can be found in the 'Processed data sets' branch
 
 **Acknowledgements**
 
-Uses the machine learning architecture inspired by: Xia, X., Zhu, C., Zhong, F. et al. TransCDR: a deep learning model for enhancing the generalizability of drug activity prediction through transfer learning and multimodal data fusion. BMC Biol 22, 227 (2024). https://doi.org/10.1186/s12915-024-02023-8
+Uses machine learning architecture inspired by: Xia, X., Zhu, C., Zhong, F. et al. TransCDR: a deep learning model for enhancing the generalizability of drug activity prediction through transfer learning and multimodal data fusion. BMC Biol 22, 227 (2024). https://doi.org/10.1186/s12915-024-02023-8
