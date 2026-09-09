@@ -54,7 +54,7 @@ for fold, (trainval_idx, test_idx) in enumerate(kf.split(entities), start=1):
     entities_trainval = entities.iloc[trainval_idx].reset_index(drop=True)
     entities_test = entities.iloc[test_idx].reset_index(drop=True)
 
-    # Split remaining entities into train and val
+    # Split remaining drugs or cell lines into train and val
     entities_train, entities_val = train_test_split(
         entities_trainval,
         test_size=val_frac_of_trainval,
@@ -62,7 +62,7 @@ for fold, (trainval_idx, test_idx) in enumerate(kf.split(entities), start=1):
         shuffle=True
     )
 
-    # Split pairs by entity membership (cold drug or cold cell)
+    # Split pairs by scenario
     pairs_train = pairs[pairs[SPLIT_COL].isin(entities_train[SPLIT_COL])]
     pairs_val   = pairs[pairs[SPLIT_COL].isin(entities_val[SPLIT_COL])]
     pairs_test  = pairs[pairs[SPLIT_COL].isin(entities_test[SPLIT_COL])]
