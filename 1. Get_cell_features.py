@@ -12,7 +12,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = PROJECT_ROOT / "raw"
 PROCESSED_DIR = PROJECT_ROOT / "processed"
 
-# Choose to use CRISPR data as a feature, or prism data for the training data set
+# Choose to use CRISPR data as a feature
 use_crispr = True
 
 # ------------------------
@@ -40,7 +40,7 @@ gdsc = pd.concat([gdsc, transcdr]).dropna().drop_duplicates(subset = ['COSMIC_ID
 smiles = pd.read_csv(PROCESSED_DIR / 'drug_smiles.csv') 
 smiles = smiles.rename(columns={"drug": "drug_name"})
 
-def normalize_name(x: str) -> str:
+def normalise_name(x: str) -> str:
     return (
         str(x)
         .upper()
@@ -50,7 +50,7 @@ def normalize_name(x: str) -> str:
         .replace(".", "")
     )
 
-gdsc["drug_name"] = gdsc["drug_name"].map(normalize_name)
+gdsc["drug_name"] = gdsc["drug_name"].map(normalise_name)
 
 gdsc = gdsc.merge(smiles, on='drug_name', how='left')
 
@@ -68,9 +68,9 @@ model = model.rename(columns={
     "StrippedCellLineName": "stripped_cell_line_name",
 })
 
-model["norm_ccle"] = model["cell_line_name"].map(normalize_name)
-model["norm_stripped"] = model["stripped_cell_line_name"].map(normalize_name)
-gdsc["norm_cell"] = gdsc["cell_type"].map(normalize_name)
+model["norm_ccle"] = model["cell_line_name"].map(normalise_name)
+model["norm_stripped"] = model["stripped_cell_line_name"].map(normalise_name)
+gdsc["norm_cell"] = gdsc["cell_type"].map(normalise_name)
 
 # Identify norm_cell values that map to multiple original cell_types
 duplicate_norm_cells = gdsc.groupby('norm_cell')['cell_type'].nunique()
@@ -199,7 +199,7 @@ if use_crispr:
     crispr = crispr[crispr['depmap_id'].isin(cell_list)]
 
     # Remove na's
-    def optimize_dropna_greedy(df, iterations=10000):
+    def optimize_dropna(df, iterations=10000):
         """
         Greedy algorithm: each iteration, drop the single column OR row with the most NAs
         This ensures we always shrink and maximize data retention
@@ -241,7 +241,7 @@ if use_crispr:
         return df_clean
 
     # Run the greedy algorithm
-    crispr = optimize_dropna_greedy(crispr, iterations=10000) # should be 710 iterations if 0.01
+    crispr = optimize_dropna(crispr, iterations=10000) # should be 710 iterations if 0.01
     #crispr = crispr.dropna(axis=1) # to get all the cell lines (16184 columns)
 
     print('Got CRISPR features')
@@ -274,7 +274,7 @@ cn = cn[cn["depmap_id"].isin(common_cells)]
 if use_crispr:
     crispr = crispr[crispr['depmap_id'].isin(common_cells)]
 
-# Dedupe by (cell, drug) 
+# Drop duplicates by cell and drug 
 gdsc_filtered = (gdsc_filtered.groupby(["depmap_id", "drug_name"], as_index=False).agg(lnIC50=("lnIC50", "median"), smiles=("smiles", "first")))
 
 # Save to .csv
