@@ -27,7 +27,7 @@ else:
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = PROJECT_ROOT / "raw"
 PROCESSED_DIR = PROJECT_ROOT / "processed"
-OUT_DIR = Path(f"cv_splits_{SCENARIO}") # Helpful to save into separate folders
+OUT_DIR = Path(f"cv_splits_{SCENARIO}") 
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ------------------------
