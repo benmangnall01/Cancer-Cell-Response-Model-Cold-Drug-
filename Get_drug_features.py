@@ -314,7 +314,7 @@ def compute_dti_features(
 
 
 # =============================================================================
-# Pipeline Execution / Standalone Saving Logic
+# Compute drug features for training data and save
 # =============================================================================
 if __name__ == "__main__":
     PROJECT_ROOT = Path(__file__).resolve().parent.parent
