@@ -1,4 +1,9 @@
 # Cancer-Cell-Response-Model-Cold-Drug-
-Code and required data sets to run cancer-cell response model. 
-Achieves a Pearson correlation of 0.569 in a cold drug environment. 
-Uses the machine learning architecture inspired by: Xia, X., Zhu, C., Zhong, F. et al. TransCDR: a deep learning model for enhancing the generalizability of drug activity prediction through transfer learning and multimodal data fusion. BMC Biol 22, 227 (2024). https://doi.org/10.1186/s12915-024-02023-8
+
+**Script order:**
+
+Get_cell_features.py \
+Get_drug_features.py \
+Run_model_CV.py / Train_full_model.py \
+Generate_drugs.py \
+Evaluate_generated_drugs.py \
