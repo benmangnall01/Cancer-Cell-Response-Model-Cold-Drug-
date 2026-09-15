@@ -250,11 +250,11 @@ def compute_dti_features(
         pd.DataFrame: Matrix of shape (num_drugs, num_targets + 2) with drug_name and smiles.
     """
     # Load target selection files
-    crispr_gene_effect = pd.read_csv(raw_dir / 'CRISPRGeneEffect_(RAW).csv', index_col=0)
+    crispr_gene_effect = pd.read_csv(raw_dir / 'CRISPRGeneEffect.csv', index_col=0)
     top_genes = crispr_gene_effect.var().sort_values(ascending=False).head(top_n_depmap)
     depmap_genes = [gene.split(" ")[0] for gene in top_genes.index]
 
-    lincs = pd.read_csv(raw_dir / "GSE92742_Broad_LINCS_gene_info_(RAW).txt", sep='\t')
+    lincs = pd.read_csv(raw_dir / "GSE92742_Broad_LINCS_gene_info.txt", sep='\t')
     lincs_genes = lincs[lincs['pr_is_lm'] == 1]['pr_gene_symbol'].tolist()
 
     target_genes = set(depmap_genes + lincs_genes)
