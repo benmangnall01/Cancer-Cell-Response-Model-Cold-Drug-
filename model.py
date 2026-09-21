@@ -370,7 +370,6 @@ class CDR_model:
             spearmanr(y_label, y_pred)[0],
             spearmanr(y_label, y_pred)[1],
             concordance_index(y_label, y_pred),
-            mse,
         )
 
     def save_model(self, path="saved_model.pt"):
@@ -486,7 +485,7 @@ class CDR_model:
  
             if validation_generator is not None:
                 with torch.set_grad_enabled(False):
-                    y_true, y_pred, mse, rmse, pearson, p_val, spearman, s_p_val, CI, loss_val = self.test(validation_generator, self.model)
+                    y_true, y_pred, mse, rmse, pearson, p_val, spearman, s_p_val, CI = self.test(validation_generator, self.model)
  
                     lst = ["epoch " + str(epo)] + list(map(float2str, [mse, rmse, pearson, p_val, spearman, s_p_val, CI]))
                     t_now = time.time()
@@ -496,13 +495,13 @@ class CDR_model:
                         max_mse = mse
                         es = 0
                         # Display evaluation metrics
-                        print("Validation at Epoch " + str(epo + 1) + " with loss:" + str(loss_val)[:7] + ", MSE: " + str(mse)[:7]
+                        print("Validation at Epoch " + str(epo + 1) + "MSE: " + str(mse)[:7]
                             + ", Pearson Correlation: " + str(pearson)[:7] + " Spearman Correlation: " + str(spearman)[:7]
                             + ", Total time " + str(int(t_now - t_start) / 60)[:7] + " minutes")
                     else:
                         es += 1
                         # Display evaluation metrics
-                        print("Validation at Epoch " + str(epo + 1) + " with loss:" + str(loss_val)[:7] + ", MSE: " + str(mse)[:7]
+                        print("Validation at Epoch " + str(epo + 1) + "MSE: " + str(mse)[:7]
                             + ", Pearson Correlation: " + str(pearson)[:7] + " Spearman Correlation: " + str(spearman)[:7]
                             + ", Total time " + str(int(t_now - t_start) / 60)[:7] + " minutes" + f", Counter {es} of 5")
                         if es > 4:
@@ -520,7 +519,7 @@ class CDR_model:
         # ------------------------
  
         if testing_generator is not None:
-            y_true, y_pred, mse, rmse, pearson, p_val, spearman, s_p_val, CI, loss_test = self.test(testing_generator, model_max)
+            y_true, y_pred, mse, rmse, pearson, p_val, spearman, s_p_val, CI = self.test(testing_generator, model_max)
             #test_table = PrettyTable(["MSE", "RMSE", "Pearson Correlation", "p-value", "spearman", "s_p-value", "Concordance Index"])
             #test_table.add_row(list(map(float2str, [mse, rmse, pearson, p_val, spearman, s_p_val, CI])))
  
