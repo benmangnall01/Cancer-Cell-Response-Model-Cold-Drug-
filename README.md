@@ -33,7 +33,12 @@ CRISPR gene-dependency data
 
 Each modality is independently projected into a shared 256-dimensional representation.
 
-**Usage**
+## Usage
+
+**Data**
+
+To download the raw data sets (required to run), please visit: https://doi.org/10.5281/zenodo.22095665 \
+To download the processed data sets, please visit: https://doi.org/10.5281/zenodo.22099989
 
 **1. Prepare the cell-line data**
 
@@ -67,11 +72,6 @@ Evaluate the model on the held-out drugs or cell lines.
 
 Achieves a mean Pearson correlation of 0.569 in a cold-drug scenario across a 5-fold CV. \
 Achieves a mean Pearson correlation of 0.874 in a cold-cell scenario across a 5-fold CV.
-
-**Data**
-
-Raw data required to generate the processed data can be found in the 'Raw data sets' branch. \
-Processed data to run the model can be found in the 'Processed data sets' branch.
 
 **Acknowledgements**
 
