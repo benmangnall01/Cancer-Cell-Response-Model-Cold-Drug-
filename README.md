@@ -7,8 +7,6 @@ The project supports two related workflows:
 1. Evaluate response prediction with leakage-aware cold-drug or cold-cell cross-validation.
 2. Train and save a model, generate novel molecular structures, and rank those structures by predicted response across selected cell lines.
 
-Generated molecules and response predictions are computational hypotheses only. They require chemical, biological, and safety validation before any experimental or therapeutic use.
-
 ## Model inputs
 
 Each drug is represented by:
