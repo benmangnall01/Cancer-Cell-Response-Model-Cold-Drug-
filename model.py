@@ -520,9 +520,6 @@ class CDR_model:
  
         if testing_generator is not None:
             y_true, y_pred, mse, rmse, pearson, p_val, spearman, s_p_val, CI = self.test(testing_generator, model_max)
-            #test_table = PrettyTable(["MSE", "RMSE", "Pearson Correlation", "p-value", "spearman", "s_p-value", "Concordance Index"])
-            #test_table.add_row(list(map(float2str, [mse, rmse, pearson, p_val, spearman, s_p_val, CI])))
- 
             print("Testing MSE: " + str(mse) + " , Pearson Correlation: " + str(pearson) + " , Spearman Correlation: " + str(spearman) +  " , Concordance Index: " + str(CI) )
 
             return {"mse": mse, "rmse": rmse, "pearson": pearson, "spearman": spearman, "concordance_index": CI}
