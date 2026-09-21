@@ -288,7 +288,7 @@ gdsc_filtered = (gdsc_filtered.groupby(["depmap_id", "drug_name"], as_index=Fals
 # Save to .csv
 gdsc_filtered.to_csv(PROCESSED_DIR / "Response_processed.csv", index=False)
 expression.to_csv(PROCESSED_DIR / "expression.csv", index=False)
-mrna.to_csv(PROCESSED_DIR / "methylation.csv", index=False)
+mrna.to_csv(PROCESSED_DIR / "mrna.csv", index=False)
 mutations.to_csv(PROCESSED_DIR / "mutations.csv", index=False)
 cn.to_csv(PROCESSED_DIR / "copy_number.csv", index=False)
 if use_crispr:
