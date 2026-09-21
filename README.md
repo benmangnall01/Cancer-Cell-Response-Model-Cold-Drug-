@@ -29,20 +29,19 @@ The modality-specific encoders project these inputs into a shared latent space. 
 ## Project structure
 
 ```text
-TransCDR_recreate/
-├── raw/                         # Source response, omics, and mapping data
-├── processed/                   # Prepared response table and feature caches
-├── outputs/                     # Splits, metrics, checkpoints, and screening results
+CDR_Model/
+├── raw/                            # Source response, omics, and mapping data
+├── processed/                      # Prepared response table and feature caches
+├── outputs/                        # Splits, metrics, checkpoints, and screening results
 └── scripts/
-    ├── Get_cell_features.py     # Prepare response and cell-line features
-    ├── Get_drug_features.py     # Build drug feature caches
-    ├── Run_model_CV.py          # Five-fold cold-drug or cold-cell evaluation
-    ├── Train_full_model.py      # Train and save the model used for screening
-    ├── Generate_Drugs.py        # Generate novel SMILES and their features
-    ├── Evaluate_generated_drugs.py
-    │                            # Predict and summarize generated-drug responses
-    ├── model.py                 # Data loading, model definition, training, and evaluation
-    └── model_helper.py          # Transformer building blocks
+    ├── Get_cell_features.py        # Prepare response and cell-line features
+    ├── Get_drug_features.py        # Build drug feature caches
+    ├── Run_model_CV.py             # Five-fold cold-drug or cold-cell evaluation
+    ├── Train_full_model.py         # Train and save the model used for screening
+    ├── Generate_Drugs.py           # Generate novel SMILES and their features
+    ├── Evaluate_generated_drugs.py # Predict and summarize generated-drug responses
+    ├── model.py                    # Data loading, model definition, training, and evaluation
+    └── model_helper.py             # Transformer building blocks
 ```
 
 All scripts resolve paths from the project root, so they can be run from the `scripts` directory without editing working-directory paths.
@@ -167,7 +166,7 @@ Candidates can be prioritized using low predicted `ln_ic50`, with QED and other 
 The original project configuration reported the following mean Pearson correlations across five folds:
 
 - cold-drug prediction: **0.569**
-- cold-cell prediction: **0.874**
+- cold-cell prediction: **0.886**
 
 Results depend on the exact input-data versions, feature settings, split scenario, and software environment.
 
