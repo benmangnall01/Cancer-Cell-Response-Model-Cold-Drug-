@@ -495,13 +495,13 @@ class CDR_model:
                         max_mse = mse
                         es = 0
                         # Display evaluation metrics
-                        print("Validation at Epoch " + str(epo + 1) + "MSE: " + str(mse)[:7]
+                        print("Validation at Epoch " + str(epo + 1) + " with MSE: " + str(mse)[:7]
                             + ", Pearson Correlation: " + str(pearson)[:7] + " Spearman Correlation: " + str(spearman)[:7]
                             + ", Total time " + str(int(t_now - t_start) / 60)[:7] + " minutes")
                     else:
                         es += 1
                         # Display evaluation metrics
-                        print("Validation at Epoch " + str(epo + 1) + "MSE: " + str(mse)[:7]
+                        print("Validation at Epoch " + str(epo + 1) + " with MSE: " + str(mse)[:7]
                             + ", Pearson Correlation: " + str(pearson)[:7] + " Spearman Correlation: " + str(spearman)[:7]
                             + ", Total time " + str(int(t_now - t_start) / 60)[:7] + " minutes" + f", Counter {es} of 5")
                         if es > 4:
