@@ -1,6 +1,6 @@
 # Cancer Cell Response Model and De Novo Drug Screening
 
-This repository contains a machine learning model for predicting cancer cell-line response to small molecules. The model predicts natural-log IC50 (`ln_ic50`) from molecular representations of a drug and genomic features of a cell line.
+This repository contains a machine learning model for predicting cancer cell-line response to small molecules. The model predicts natural-log IC50 (ln_ic50) from molecular representations of a drug and genomic features of a cell line.
 
 The project supports two related workflows:
 
