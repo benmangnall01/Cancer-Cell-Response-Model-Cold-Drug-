@@ -1,4 +1,4 @@
-# Cancer cell response model and De Novo Drug Screening
+# Cancer Cell Response Model and De Novo Drug Screening
 
 This repository contains a machine learning model for predicting cancer cell-line response to small molecules. The model predicts natural-log IC50 (`ln_ic50`) from molecular representations of a drug and genomic features of a cell line.
 
@@ -165,7 +165,7 @@ Candidates can be prioritized using low predicted `ln_ic50`, with QED and other 
 
 The original project configuration reported the following mean Pearson correlations across five folds:
 
-- cold-drug prediction: **0.569**
+- cold-drug prediction: **0.565**
 - cold-cell prediction: **0.886**
 
 Results depend on the exact input-data versions, feature settings, split scenario, and software environment.
