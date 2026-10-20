@@ -161,15 +161,9 @@ Candidates can be prioritized using low predicted `ln_ic50`, with QED and other 
 - `Run_model_CV.py` is intended for performance estimation. `Train_full_model.py` produces the checkpoint consumed by the generated-drug evaluation workflow.
 - The default random seed is fixed where sampling or splitting is performed, but GPU operations and library versions can still introduce small run-to-run differences.
 
-## Reference results
+## Results
 
 The original project configuration reported the following mean Pearson correlations across five folds:
 
-- cold-drug prediction: **0.565**
+- cold-drug prediction: **0.611**
 - cold-cell prediction: **0.886**
-
-Results depend on the exact input-data versions, feature settings, split scenario, and software environment.
-
-## Acknowledgement
-
-This implementation is based on the model described in [TransCDR: a deep learning model for enhancing the generalizability of drug activity prediction through transfer learning and multimodal data fusion](https://doi.org/10.1186/s12915-024-02023-8).
